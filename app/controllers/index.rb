@@ -50,11 +50,17 @@ end
 
 get '/surveys/:id/response' do
   redirect '/' unless session[:user_id]
+  @survey = Survey.find params[:id]
   erb :take_survey
 end
 
 post '/surveys/responses' do
-
+  survey = Survey.find params.delete("survey_id")
+  params.each do |k, v|
+    p Question.find(k)
+    p Response.find(v)
+  end
+  survey.title
 end
 
 get '/surveys/:id' do
