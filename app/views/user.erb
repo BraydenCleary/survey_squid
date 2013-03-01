@@ -1,0 +1,15 @@
+<h1>Welcome, <%=@user.name%></h1>
+
+<h2>Access Your Survey Results</h2>
+<ul>
+  <%@user_surveys.each do |survey|%>
+  <li><a href="/surveys/<%="#{survey.id}"%>><%=survey.title%></a></li>
+  <%end%>
+</ul>
+
+<h2>Take a new Survey!</h2>
+<ul>
+  <%@surveys.each do |survey|%>
+  <li><a href="/surveys/<%="#{survey.id}"%>/response"><%=survey.title%></a></li>
+  <%end%>
+</ul>
