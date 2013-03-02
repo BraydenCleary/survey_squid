@@ -44,7 +44,9 @@ get '/surveys/new' do
   erb :new_survey
 end
 
-post '/surveys/new' do
+post '/surveys' do
+  puts params
+  erb :surveys
   #put surveys in database
 end
 
