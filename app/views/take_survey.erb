@@ -1,0 +1,15 @@
+
+<fieldset>
+  <legend><%= @survey.title %></legend>
+  <form method="post" action="/surveys/responses">
+    <% @survey.questions.each do |question| %>
+      <p>Question: <%= question.content %>?</p>
+      <% question.responses.each do |response| %>
+        <input type="radio" name=<%="#{question.id}"%> value=<%="#{response.id}"%>>
+        <%= response.text %> <br/>
+      <% end %>
+    <% end %>
+    <input type="hidden" name="survey_id" value=<%="#{@survey.id}"%>>
+    <input type="submit">
+  </form>
+<fieldset>

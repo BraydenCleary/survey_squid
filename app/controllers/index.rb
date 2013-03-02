@@ -56,6 +56,7 @@ end
 
 post '/surveys/responses' do
   survey = Survey.find params.delete("survey_id")
+  user_survey = UserSurvey.new(survey_id: survey.id, user_id: @user.id)
   params.each do |k, v|
     p Question.find(k)
     p Response.find(v)

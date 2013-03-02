@@ -26,14 +26,16 @@ responses = []
 
 end
 
+
+user_surveys = []
 20.times do |counter|
-  UserSurvey.create(:user_id => users[counter].id,
+  user_surveys << UserSurvey.create(:user_id => users[counter].id,
                     :survey_id => surveys.reverse[counter].id)
 end
 
 20.times do |counter|
   response = responses[counter]
-  UserResponse.create(:user_id => users.reverse[counter].id,
+  UserResponse.create(:user_survey_id => user_surveys.reverse[counter].id,
                       :response_id => response.id,
                       :question_id => questions[counter].id)
   response.count += 1
