@@ -11,5 +11,5 @@ class User < ActiveRecord::Base
   def surveys_created
     Survey.where(:creator_id => self.id)
   end
-  
+
 end
