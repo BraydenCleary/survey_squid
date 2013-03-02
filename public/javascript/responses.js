@@ -1,30 +1,32 @@
 $(document).ready(function(){
   
   
-  var create_entries = function(num, type){
+  var create_entries = function(){
   
-  // var responseNum = num;
   var node = "";
-  var displayCount = num  
+  var displayCount = 0  
 
-  // for(varCount=0;varCount<responseNum;varCount++){
-  //     var displayCount = varCount+1;
-  //     node += '<p><label for="'+type+displayCount+'">'+type+displayCount+': </label><input type="text" name="'+type+displayCount+'" id="'+type+displayCount+'">';
-  // }
-  // $('form.create_'+type.toLowerCase()).append(node)
-  // //remove a textfield    
-
-  $('#add_'+type.toLowerCase()).on('click', function(){
+  $('#add_question').on('click', function(){
     displayCount++;
-    node = '<p><label for="'+type+displayCount+'">'+type+displayCount+': </label><input type="text" name="'+type+displayCount+'" id="'+type+displayCount+'">';
+    node = '<p><label for="Question'+displayCount+'">Question'+displayCount+': </label><input type="text" name="Question'+displayCount+'[question]" id="Question'+displayCount+'"><br><span id="add_response'+displayCount+'">Add Response</span>';
     $('form').append(node);
+    var Count = 0
+
+    $('#add_response'+displayCount).on('click', function(){
+    Count++;
+    node2 = '<p><label for="Response'+Count+'">Response'+Count+': </label><input type="text" name="Question'+displayCount+'[Response'+Count+']" id="Response'+Count+'">';
+    $(this).parent().append(node2);
+  });
+
+
   });
   }
+  
 
 
-  create_entries(2, 'Response')
+  create_entries()
 
-  create_entries(2, 'Question')
+  
 
 });
 
