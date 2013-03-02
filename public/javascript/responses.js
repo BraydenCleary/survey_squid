@@ -21,20 +21,5 @@ $(document).ready(function(){
 
   });
   }
-  
-
-
-  create_entries()
-
-  
-
+  create_entries();
 });
-
-
-
-
-
-  // <div id='response1'>
-  //   <label for="response1">Response 1:</label>
-  //   <input type='text' name='response1' placeholder='Response' />
-  // </div>

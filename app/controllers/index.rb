@@ -44,9 +44,18 @@ get '/surveys/new' do
 end
 
 post '/surveys' do
-  puts params
+  survey = Survey.create(title: params.delete("title"), creator_id: @user.id)
+  params.each do |throwaway, qr|
+    quest = Question.create(content: qr.delete("question"), survey_id: survey.id)
+    qr.each do |throw2, response|
+      resp = Response.create(text: response, question_id: quest.id)
+      # quest.responses << resp if resp.valid?
+    end
+    # survey.questions << quest
+  end
   erb :surveys
-  #put surveys in database
+
+  #have questions check responses valid and surveys check that questions are valid
 end
 
 get '/surveys/:id/response' do
