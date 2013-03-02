@@ -11,6 +11,7 @@ class UserSurvey < ActiveRecord::Base
   include ActiveModel::Validations
   validates_presence_of :user_id, :survey_id
   validates_with ResponseValidator
+  validates_uniqueness_of :user_id, :scope => :survey_id
   
   belongs_to :survey
   belongs_to :user
@@ -23,5 +24,3 @@ class UserSurvey < ActiveRecord::Base
       self.user_responses.each {|user_response| user_response.save }
     end
 end
-
-
