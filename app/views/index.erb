@@ -11,8 +11,6 @@
 </style>
 
 <div class="container">
-  <h1>Welcome to Survey Squid<%=", #{@user.name if @user}"%>!</h1>
-  
   <fieldset>
     <form action="/sign_in" method="post">
       <input type="text" name="email" placeholder="yourname@email.com">
