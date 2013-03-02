@@ -1,2 +1,8 @@
-<h1>Welcome to Survey Squid<%=", #{@user.name if @user}"%>!</h1>
-<a href="/logout">logout</a>
+<div id="header">
+  <% if session[:user_id] %>
+    <span id="welcome">Welcome to Survey Squid<%=", #{@user.name if @user}"%>!</span>
+    <span id="logout"><a href="/logout">logout</a></span>
+  <% else %>
+    <div class='links'><a href='/'>Login/Signup</a></div>
+  <% end %>
+</div>
