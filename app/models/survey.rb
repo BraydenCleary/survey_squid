@@ -8,4 +8,6 @@ class Survey < ActiveRecord::Base
   def creator
     User.find(self.creator_id)
   end
+
+
 end

@@ -45,8 +45,15 @@ post '/surveys/responses' do
 end
 
 get '/surveys/:id' do
-  redirect '/' unless session[:user_id]
-  @questions = Question.where(:survey_id => params[:id])
-  
+  questions = Question.where(:survey_id => params[:id])
+  responses_per_question = questions.map! {|question| question.responses }
+  @data = []
+  responses_per_question.each do |responses|
+    responses.each do |response|
+      @data << [response.text, response.count]
+    end
+  end
+  puts @data
   erb :survey_results
 end
+
