@@ -44,3 +44,8 @@ body {
   margin-left: 10px;
 }
 
+.create-survey {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}

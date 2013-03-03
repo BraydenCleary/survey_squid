@@ -12,7 +12,7 @@
 
 <div class="container">
   <fieldset>
-    <form action="/sign_in" method="post">
+    <form action="/sessions/new" method="post">
       <input type="text" name="email" placeholder="yourname@email.com">
       <input type="password" name="password" placeholder="password">
       <input type="submit" value="Log in!">
@@ -21,7 +21,7 @@
   <h3><%=@login_error%></h3>
  <br/><hr/>
   <fieldset>
-    <form action="/create_user" method="post">
+    <form action="/users/new" method="post">
       <input type="text" name="name" placeholder="Your name">
       <input type="text" name="email" placeholder="yourname@email.com">
       <input type="password" name="password" placeholder="password">
