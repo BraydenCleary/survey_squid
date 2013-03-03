@@ -1,0 +1,9 @@
+<%# Question.where(:survey_id => 22).map { |question| question.user_responses } %>
+
+
+<% @questions.each do |question| %>
+  <%= question.content %>
+  <% question.responses.each do |response| %>
+    <%= response.text %>: <%= response.count %>
+  <% end %>
+<% end %>

@@ -3,7 +3,7 @@
 <h2>Access Your Survey Results</h2>
 <ul>
   <%@user_surveys.each do |survey|%>
-  <li><a href="/surveys/<%="#{survey.id}"%>><%=survey.title%></a></li>
+  <li><a href="/surveys/<%=survey.id%>"><%=survey.title%></a></li>
   <%end%>
 </ul>
 
