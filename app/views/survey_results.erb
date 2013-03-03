@@ -1,32 +1,6 @@
-<html>
-  <head>
-   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var dataArrayLength = <%= @data.length %>
-        //Iterate
-        var dataToPass = [];
-        <% @data.each do |data| %>
-          dataToPass.push(<%=data%>)
-        <% end %>
-        console.log(dataToPass)
-          var data = google.visualization.arrayToDataTable([['some', 'Times Selected'],
-                                                          dataToPass[0],
-                                                          dataToPass[1]]);
-           
-         var options = {
-          hAxis: {title: 'What city were you born in?', titleTextStyle: {color: 'red'}}
-        };
-
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-  </body>
-</html>
+<h1>Click on questions to get data:</h1>
+<ul>
+<% @questions.each do |question| %>
+  <li><a href='<%= question.survey_id %>/questions/<%= question.id %>/results'><%= question.content %></a></li>
+<% end %>
+</ul>

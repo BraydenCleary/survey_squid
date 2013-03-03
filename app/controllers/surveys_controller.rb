@@ -45,15 +45,17 @@ post '/surveys/responses' do
 end
 
 get '/surveys/:id' do
-  questions = Question.where(:survey_id => params[:id])
-  responses_per_question = questions.map! {|question| question.responses }
-  @data = []
-  responses_per_question.each do |responses|
-    responses.each do |response|
-      @data << [response.text, response.count]
-    end
-  end
-  puts @data
+  @questions = Question.where(:survey_id => params[:id])
   erb :survey_results
 end
 
+
+get '/surveys/:survey_id/questions/:question_id/results' do
+  @question = Question.find(params[:question_id])
+  responses = question.responses
+  @data = []
+  responses.each do |response|
+    @data << [response.text, response.count]
+  end
+  erb :survey_results_graph
+end
