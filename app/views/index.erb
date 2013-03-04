@@ -11,23 +11,24 @@
 </style>
 
 <div class="container">
-  <fieldset>
-    <form action="/sessions/new" method="post">
-      <input type="text" name="email" placeholder="yourname@email.com">
-      <input type="password" name="password" placeholder="password">
-      <input type="submit" value="Log in!">
-    </form>
-  </fieldset>
-  <h3><%=@login_error%></h3>
- <br/><hr/>
-  <fieldset>
-    <form action="/users/new" method="post">
-      <input type="text" name="name" placeholder="Your name">
-      <input type="text" name="email" placeholder="yourname@email.com">
-      <input type="password" name="password" placeholder="password">
-      <input type="password" name="password_confirmation" placeholder="password">
-      <input type="submit" value="Sign up!">
-    </form>
-  </fieldset>
-  <h3><%=@creation_errors%></h3>
+  <h1 id="title">Survey Squid</h1>
+  <div class="internal"> 
+    <h2>Login</h2>
+      <form action="/sessions/new" method="post">
+        <input type="text" name="email" placeholder="yourname@email.com">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Log in!">
+      </form>
+    <h3><%=@login_error%></h3>
+   <hr/>
+    <h2>Registration</h2>
+      <form action="/users/new" method="post">
+        <input type="text" name="name" placeholder="Your name">
+        <input type="text" name="email" placeholder="yourname@email.com">
+        <input type="password" name="password" placeholder="password">
+        <input type="password" name="password_confirmation" placeholder="password">
+        <input type="submit" value="Sign up!">
+      </form>
+    <h3><%=@creation_errors%></h3>
+  <div>
 </div>

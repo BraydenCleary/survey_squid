@@ -1,10 +1,9 @@
 <div id="header">
   <% if session[:user_id] %>
-    <span id="welcome">Welcome to Survey Squid<%=", #{@user.name if @user}"%>!</span>
-    <a href='/surveys/new' class='create-survey'>Create a Survey</a>
-    <a href="/users/<%=session[:user_id]%>">My Profile</a>
+    <span id="welcome">Welcome to Survey Squid, <a href="/users/<%=session[:user_id]%>"><%=@user.name if @user%></a></span>
+    <a id="create" href='/surveys/new' class='create-survey'>Create a Survey</a>
     <span id="logout"><a href="/logout">logout</a></span>
   <% else %>
-    <div class='links'><a href='/'>Login/Signup</a></div>
+    <div class='links'>Welcome to Survey Squid - <a href='/'>Login/Signup</a></div>
   <% end %>
 </div>
