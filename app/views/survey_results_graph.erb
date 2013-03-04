@@ -10,7 +10,8 @@
                                                       <%= values %>]);
     var titleText = "<%= title %>"
     var options = {
-      hAxis: {title: titleText, titleTextStyle: {color: 'red'}}
+      hAxis: {title: titleText, titleTextStyle: {color: 'red'} },
+      vAxis: {minValue:0}
     };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('<%= idx %>_chart_div'));
@@ -22,11 +23,9 @@
     <% @questions.each_with_index do |(title,values), idx| %>
       drawChart<%= idx %>();<% end %>
   }
-
   google.setOnLoadCallback(drawcharts);
 
 </script>
-
 
 <div id="charts" style="width: 900px; ">
 <% @questions.each_with_index do |(title,values), idx| %>

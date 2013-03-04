@@ -1,33 +1,27 @@
-<style type="text/css">
-  .container {
-    margin: 20px auto;
-    width: 600px;
-    padding: 0px 20px 20px 20px;
-    border: 1px dotted black;
-  }
-  th {
-    text-align: left;
-  }
-</style>
-
-<div class="container">
-  <fieldset>
+<div class='container'>
+  <div class='log-in'>
     <form action="/sessions/new" method="post">
-      <input type="text" name="email" placeholder="yourname@email.com">
-      <input type="password" name="password" placeholder="password">
-      <input type="submit" value="Log in!">
+      <input class='input' type="text" name="email" placeholder="yourname@email.com">
+      <input class='input' type="password" name="password" placeholder="password">
+      <input class='submit' type="submit" value="Log in!">
     </form>
-  </fieldset>
   <h3><%=@login_error%></h3>
- <br/><hr/>
-  <fieldset>
+  </div>
+
+  <div class='squid-photo'>
+    <img src='/images/cartoon-squid.gif' />
+  </div>
+
+  <div class='sign-up'>
     <form action="/users/new" method="post">
-      <input type="text" name="name" placeholder="Your name">
-      <input type="text" name="email" placeholder="yourname@email.com">
-      <input type="password" name="password" placeholder="password">
-      <input type="password" name="password_confirmation" placeholder="password">
-      <input type="submit" value="Sign up!">
+      <input class='input' type="text" name="name" placeholder="Your name">
+      <input class='input' type="text" name="email" placeholder="yourname@email.com">
+      <input class='input' type="password" name="password" placeholder="password">
+      <input class='input' type="password" name="password_confirmation" placeholder="password">
+      <input class='submit' type="submit" value="Sign up!">
     </form>
-  </fieldset>
-  <h3><%=@creation_errors%></h3>
+    <h3><%=@creation_errors%></h3>
+  </div>
 </div>
+
+

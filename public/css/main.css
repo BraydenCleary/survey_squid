@@ -6,14 +6,15 @@ body {
   width: 100%;
   height: 40px;
   /*position: fixed;*/
-  background:#DDDDDD;
+  background: #000000;
   margin-bottom: 20px;
 }
 
-#logout {
-  float:right;
+#logout a{
+  float: right;
   margin-right: 20px;
-  padding-top:10px;
+  padding-top: 10px;
+  color: #79527a;
 }
 
 #welcome {
@@ -21,6 +22,7 @@ body {
   font-size: 20px;
   margin-left: 10px;
   margin-top:8px;
+  color: #9b9b9b;
 }
 
 .links {
@@ -48,4 +50,38 @@ body {
   float: left;
   margin-left: 10px;
   margin-top: 10px;
+  color: #79527a;
+}
+
+.my-profile {
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #79527a;
+}
+
+.log-in {
+  margin-left: 10px;
+  margin-top: 200px;
+  width: 200px;
+  float: left;
+}
+
+.squid-photo {
+  float: left;
+}
+
+.sign-up {
+  margin-top: 200px;
+  width: 250px;
+  float: left;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.input {
+  margin-bottom: 5px;
+  float: left;
 }
