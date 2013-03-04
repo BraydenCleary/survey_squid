@@ -10,8 +10,9 @@
                                                       <%= values %>]);
     var titleText = "<%= title %>"
     var options = {
-      hAxis: {title: titleText, titleTextStyle: {color: 'red'} },
-      vAxis: {minValue:0}
+      hAxis: {title: titleText, titleTextStyle: {color: '#79527a'} },
+      vAxis: {minValue:0},
+      backgroundColor: {fill: '#9b9b9b'}
     };
 
     var chart = new google.visualization.ColumnChart(document.getElementById('<%= idx %>_chart_div'));
@@ -27,11 +28,11 @@
 
 </script>
 
-<div id="charts" style="width: 900px; ">
+<div id="charts" style="width: 930px; ">
 <% @questions.each_with_index do |(title,values), idx| %>
     <div style="<%= (idx % 2).zero? ? 'float: left;' : 'float: right;' %>">
       <strong><%= title %></strong><br>
-      <div id="<%= idx %>_chart_div" style="width: 400px; height: 300px;"></div>
+      <div id="<%= idx %>_chart_div" style="width: 450px; height: 300px; margin-left: 10px;"></div>
     </div>
 <% end %>
 </div>

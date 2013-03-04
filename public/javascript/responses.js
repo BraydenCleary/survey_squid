@@ -1,6 +1,5 @@
 $(document).ready(function(){
-  
-  
+
   var create_entries = function(){
   
   var node = "";
