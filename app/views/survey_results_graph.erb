@@ -1,0 +1,39 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+
+  <% @questions.each_with_index do |(title,values), idx| %>
+
+  function drawChart<%= idx %>() {
+
+    var dataArrayLength = <%= values.length %>
+    var data = google.visualization.arrayToDataTable([['some', 'Times Selected'],
+                                                      <%= values %>]);
+    var titleText = "<%= title %>"
+    var options = {
+      hAxis: {title: titleText, titleTextStyle: {color: 'red'}}
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('<%= idx %>_chart_div'));
+    chart.draw(data, options);
+  }
+  <% end %>
+
+  function drawcharts(){
+    <% @questions.each_with_index do |(title,values), idx| %>
+      drawChart<%= idx %>();<% end %>
+  }
+
+  google.setOnLoadCallback(drawcharts);
+
+</script>
+
+
+<div id="charts" style="width: 900px; ">
+<% @questions.each_with_index do |(title,values), idx| %>
+    <div style="<%= (idx % 2).zero? ? 'float: left;' : 'float: right;' %>">
+      <strong><%= title %></strong><br>
+      <div id="<%= idx %>_chart_div" style="width: 400px; height: 300px;"></div>
+    </div>
+<% end %>
+</div>
