@@ -3,7 +3,13 @@
 <h2>Access Your Survey Results</h2>
 <ul>
   <%@user_surveys.each do |survey|%>
-  <li><a href="/surveys/<%=survey.id%>"><%=survey.title%></a></li>
+  <li>
+    <a href="/surveys/<%=survey.id%>"><%=survey.title%></a>
+    <form action="/surveys/<%=survey.id%>" method='post'>
+      <input type="hidden" name="_method" value="delete" /> 
+      <input type='submit' value='Delete Survey' />
+    </form>
+  </li>
   <%end%>
 </ul>
 

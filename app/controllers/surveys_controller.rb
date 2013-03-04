@@ -67,3 +67,9 @@ get '/surveys/:survey_id/questions/:question_id/results' do
   end
 
 end
+
+delete '/surveys/:id' do
+  survey = Survey.find(params[:id])
+  survey.destroy
+  redirect to "/users/#{session[:user_id]}"
+end
