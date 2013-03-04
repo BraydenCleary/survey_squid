@@ -1,6 +1,11 @@
 <div class='container'>
+
+  <h1 class='slogan'>Surveys and Squids.</h1>
+
+
   <div class='log-in'>
-    <form action="/sessions/new" method="post">
+    <span id='login-dropdown'>Log In</span>
+    <form action="/sessions/new" method="post" id='log-in-form'>
       <input class='input' type="text" name="email" placeholder="yourname@email.com">
       <input class='input' type="password" name="password" placeholder="password">
       <input class='submit' type="submit" value="Log in!">
@@ -8,12 +13,14 @@
   <h3><%=@login_error%></h3>
   </div>
 
+
   <div class='squid-photo'>
     <img src='/images/cartoon-squid.gif' />
   </div>
 
   <div class='sign-up'>
-    <form action="/users/new" method="post">
+    <span id='signup-dropdown'>Sign Up</span>
+    <form action="/users/new" method="post" id='sign-up-form'>
       <input class='input' type="text" name="name" placeholder="Your name">
       <input class='input' type="text" name="email" placeholder="yourname@email.com">
       <input class='input' type="password" name="password" placeholder="password">
@@ -22,6 +29,10 @@
     </form>
     <h3><%=@creation_errors%></h3>
   </div>
+
+
+
+
 </div>
 
 
