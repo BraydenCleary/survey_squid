@@ -4,7 +4,7 @@ $(document).ready(function(){
   
   var node = "";
   var displayCount = 0
-    
+
   $('#add_question').on('click', function(){
     displayCount++;
     node = '<div class="question"><p><label for="Question'+displayCount+'">Question '+displayCount+' : </label><input type="text" name="Question'+displayCount+'[question]" id="Question'+displayCount+'"><br><span class="add" id="add_response'+displayCount+'">Add Response</span></div>';

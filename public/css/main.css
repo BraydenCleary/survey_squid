@@ -2,6 +2,32 @@ body {
   font-family: 'Cantora One', sans-serif;
 }
 
+#title {
+  margin: 40px 0 0 100px;
+  text-decoration: underline;
+}
+
+div.container {
+  border: 2px solid black;
+  width: 400px;
+  background: #F5DEB3;
+}
+
+div.internal {
+  padding: 30px;
+}
+
+div.internal input{
+  display:block;
+  padding: 5px;
+  margin: 10px auto;
+}
+
+div.internal h3 {
+  padding: 0;
+}
+
+
 #header {
   width: 100%;
   height: 40px;
@@ -22,11 +48,28 @@ body {
   font-size: 20px;
   margin-left: 10px;
   margin-top:8px;
+
   color: #9b9b9b;
+}
+
+#welcome a,
+.links a {
+  color: white;
+  text-decoration: none;
+}
+
+#welcome a:hover,
+#logout a:hover,
+.links a:hover,
+#create:hover {
+  color: red;
+  text-decoration: underline
 }
 
 .links {
   padding-top: 10px;
+  color:white;
+
 }
 
 .responses {
@@ -44,6 +87,10 @@ body {
 
 .create_response {
   margin-left: 10px;
+}
+
+.create_response input{
+  margin: 3px;
 }
 
 .create-survey {
@@ -84,4 +131,10 @@ body {
 .input {
   margin-bottom: 5px;
   float: left;
+}
+
+#create {
+  text-decoration: none;
+  color: white;
+  padding-top: 2px
 }
