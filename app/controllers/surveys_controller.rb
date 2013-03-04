@@ -9,16 +9,17 @@ end
 
 post '/surveys' do
   survey = Survey.create(title: params.delete("title"), creator_id: @user.id)
-  puts survey.id
-  qkeys = params.select {|s| s =~ /\Aq\d+\z/}.keys
-  qkeys.each do |qkey|
-    question = Question.create(content: params.delete(qkey), survey_id: survey.id)
-    rkeys = params.select {|r| r.include?(qkey)}.keys
-    rkeys.each do |rkey|
-      Response.create(question_id: question.id, text: params.delete(rkey))
+  params.each do |throwaway, qr|
+    quest = Question.create(content: qr.delete("question"), survey_id: survey.id)
+    qr.each do |throw2, response|
+      resp = Response.create(text: response, question_id: quest.id)
+      # quest.responses << resp if resp.valid?
     end
+    # survey.questions << quest
   end
-  redirect "/users/#{session[:user_id]}"
+  redirect to "/users/#{session[:user_id]}"
+
+  #have questions check responses valid and surveys check that questions are valid
 end
 
 get '/surveys/:id/responses' do
