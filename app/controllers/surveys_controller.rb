@@ -54,7 +54,6 @@ get '/surveys/:id' do
       @questions[question.content] << "#{[response.text, response.count]},"
     end
   end
-  puts @questions
   erb :survey_results_graph
 end
 

@@ -1,11 +1,9 @@
 $(document).ready(function(){
   
-  
   var create_entries = function(){
   
   var node = "";
   var displayCount = 0
-    
 
   $('#add_question').on('click', function(){
     displayCount++;
